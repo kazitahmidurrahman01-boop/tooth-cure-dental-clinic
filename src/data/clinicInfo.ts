@@ -23,13 +23,15 @@ export const clinicInfo = {
   email: 'toothcure.dhaka@gmail.com',
   hours: {
     regular: 'Saturday – Thursday: 4:30 PM – 9:30 PM',
-    friday: 'Friday: By Appointment Only',
+    friday: 'Friday: By Prior Appointment Only',
     closed: 'Friday Morning',
   },
   googleMaps: {
-    searchQuery: 'Tooth Cure Dental 1/1E Block C Lalmatia Dhanmondi 27 Dhaka',
-    embedUrl: 'https://maps.google.com/maps?q=1/1E+Block+C+Lalmatia+Dhanmondi+27+Dhaka&t=&z=16&ie=UTF8&iwloc=&output=embed',
-    directLink: 'https://maps.google.com/?q=1/1E+Block+C+Lalmatia+Dhanmondi+27+Dhaka+1207',
+    searchQuery: 'Tooth Cure Dental Orthodontics & Implant Center 1/1E Block C Lalmatia Dhanmondi 27 Dhaka',
+    embedUrl: 'https://maps.google.com/maps?q=23.7555,90.37316+(Tooth+Cure+Dental+Orthodontics+%26+Implant+Center)&t=&z=17&ie=UTF8&iwloc=B&output=embed',
+    directLink: 'https://www.google.com/maps/search/?api=1&query=Tooth+Cure+Dental+Orthodontics+%26+Implant+Center+1%2F1E+Block+C+Lalmatia+Dhanmondi+Dhaka',
+    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=23.7555,90.37316&travelmode=driving',
+    directionsQueryUrl: 'https://www.google.com/maps/dir/?api=1&destination=Tooth+Cure+Dental+Orthodontics+%26+Implant+Center,+1/1E,+Block+C,+Lalmatia,+Dhaka',
   },
   stats: [
     { value: '15+', label: 'Years Combined Clinical Experience' },

@@ -35,7 +35,7 @@ export default function Doctors() {
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-semibold uppercase tracking-wider mb-4"
           >
             <ShieldCheck className="w-3.5 h-3.5 text-teal-700" />
-            <span>Consultant Clinical Team</span>
+            <span>Consultant Clinical Leadership</span>
           </motion.div>
 
           <motion.h2
@@ -55,12 +55,12 @@ export default function Doctors() {
             transition={{ delay: 0.2 }}
             className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg mt-3"
           >
-            Qualified, post-graduate trained dental clinicians from Dhaka University affiliated institutions dedicated to patient wellness and clinical perfection.
+            Qualified, post-graduate trained dental clinicians from Dhaka University (DU) and Dhaka Dental College (DDC) dedicated to precision oral care in Lalmatia, Dhanmondi 27.
           </motion.p>
         </div>
 
         {/* Doctor Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {doctors.map((doctor, i) => {
             const isExpanded = expandedId === doctor.id;
 
@@ -70,36 +70,54 @@ export default function Doctors() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.5 }}
-                className="bg-slate-50/80 rounded-3xl overflow-hidden border border-slate-200 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                transition={{ delay: i * 0.12, duration: 0.5 }}
+                className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg hover:border-teal-300 transition-all duration-300 flex flex-col justify-between"
               >
-                {/* Doctor Avatar / Header Banner */}
-                <div className="p-6 sm:p-8 bg-gradient-to-br from-teal-900 via-[#0A2540] to-slate-900 text-white relative">
-                  <div className="flex items-center gap-4 sm:gap-5">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/10 border-2 border-teal-400/30 overflow-hidden flex items-center justify-center shrink-0 shadow-lg">
-                      <User size={48} className="text-teal-200" />
-                    </div>
-                    <div>
-                      <div className="inline-block px-2.5 py-0.5 rounded-full bg-teal-400/20 text-teal-300 text-[11px] font-semibold tracking-wide uppercase mb-1">
-                        {doctor.bmdc}
+                {/* Doctor Portrait Area */}
+                <div className="relative w-full h-80 bg-gradient-to-t from-slate-900 via-slate-800 to-teal-950 overflow-hidden flex items-center justify-center">
+                  {doctor.photoUrl ? (
+                    <img
+                      src={doctor.photoUrl}
+                      alt={doctor.name}
+                      className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center justify-center p-6 text-center">
+                      <div className="w-20 h-20 rounded-full bg-teal-100/30 text-teal-300 flex items-center justify-center mb-2">
+                        <User size={40} />
                       </div>
-                      <h3 className="font-headline font-bold text-xl sm:text-2xl text-white leading-tight">
-                        {doctor.name}
-                      </h3>
-                      <p className="text-teal-200 text-xs sm:text-sm font-medium mt-1">
-                        {doctor.designation}
-                      </p>
+                      <span className="text-xs font-semibold text-slate-300">Dental Surgeon</span>
                     </div>
+                  )}
+
+                  {/* Gradient shadow overlay on photo */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none" />
+
+                  {/* BMDC Pill */}
+                  {doctor.bmdc && (
+                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-teal-800 shadow-sm border border-teal-100">
+                      {doctor.bmdc}
+                    </div>
+                  )}
+
+                  {/* In-Photo Name Overlay */}
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h3 className="font-headline font-bold text-xl text-white leading-tight drop-shadow-sm">
+                      {doctor.name}
+                    </h3>
+                    <p className="text-teal-300 text-xs font-medium mt-0.5 drop-shadow-sm">
+                      {doctor.designation}
+                    </p>
                   </div>
                 </div>
 
                 {/* Body Details */}
-                <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-6 bg-white">
+                <div className="p-6 flex-1 flex flex-col justify-between space-y-5 bg-white">
                   
                   {/* Qualifications */}
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5">
-                      Degrees &amp; Credentials
+                    <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
+                      Degrees &amp; Certifications
                     </h4>
                     <div className="flex flex-wrap gap-1.5">
                       {doctor.qualifications.map((q, idx) => (
@@ -115,25 +133,25 @@ export default function Doctors() {
 
                   {/* Bio */}
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">
-                      Clinical Focus &amp; Profile
+                    <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">
+                      Clinical Focus
                     </h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
                       {doctor.bio}
                     </p>
                   </div>
 
-                  {/* Clinical Specialties */}
+                  {/* Clinical Specialties Collapsible */}
                   <div>
                     <button
                       onClick={() => setExpandedId(isExpanded ? null : doctor.id)}
-                      className="flex items-center justify-between w-full text-xs font-bold uppercase tracking-wider text-teal-800 hover:text-teal-900 transition-colors py-1 border-t border-slate-100"
+                      className="flex items-center justify-between w-full text-xs font-bold uppercase tracking-wider text-teal-800 hover:text-teal-900 transition-colors py-1.5 border-t border-slate-100"
                     >
-                      <span>Key Clinical Procedures ({doctor.specialties.length})</span>
+                      <span>Key Procedures ({doctor.specialties.length})</span>
                       {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                     </button>
                     {isExpanded && (
-                      <ul className="mt-3 space-y-1.5">
+                      <ul className="mt-2.5 space-y-1.5">
                         {doctor.specialties.map((s, idx) => (
                           <li key={idx} className="flex items-center gap-2 text-xs text-slate-700">
                             <CheckCircle2 size={13} className="text-teal-600 shrink-0" />
@@ -148,10 +166,10 @@ export default function Doctors() {
                   <div className="pt-2">
                     <button
                       onClick={() => scrollToBooking(doctor.name)}
-                      className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-body font-semibold text-sm text-white bg-gradient-to-r from-teal-600 to-[#0A2540] shadow-xs hover:shadow-md active:scale-98 transition-all"
+                      className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-body font-semibold text-xs sm:text-sm text-white bg-gradient-to-r from-teal-600 to-[#0A2540] shadow-xs hover:shadow-md active:scale-98 transition-all"
                     >
                       <Calendar className="w-4 h-4" />
-                      <span>Book with {doctor.name.split(' ')[1]}</span>
+                      <span>Book Appointment with {doctor.name.split(' ')[1]}</span>
                     </button>
                   </div>
 

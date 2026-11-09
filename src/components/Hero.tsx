@@ -115,19 +115,28 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="flex flex-wrap items-center gap-3.5 pt-1"
+              className="flex flex-wrap items-center gap-3 pt-1"
             >
               <button
                 onClick={scrollToBooking}
-                className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-body font-semibold text-white bg-gradient-to-r from-teal-600 to-[#0A2540] shadow-sm hover:shadow-md hover:from-teal-500 hover:to-slate-900 active:scale-95 transition-all duration-200"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-body font-semibold text-white bg-gradient-to-r from-teal-600 to-[#0A2540] shadow-sm hover:shadow-md hover:from-teal-500 hover:to-slate-900 active:scale-95 transition-all duration-200 text-sm"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Book Appointment Online</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
+              <a
+                href={clinicInfo.googleMaps.directionsQueryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-body font-semibold text-teal-800 bg-teal-50 border border-teal-200 hover:bg-teal-100 hover:border-teal-300 active:scale-95 transition-all duration-200 text-sm"
+              >
+                <MapPin className="w-4 h-4 text-teal-700" />
+                <span>ম্যাপে ডিরেকশন দেখুন</span>
+              </a>
               <button
                 onClick={scrollToServices}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-body font-semibold text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 hover:border-slate-300 active:scale-95 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl font-body font-medium text-slate-600 hover:text-slate-900 transition-colors text-sm"
               >
                 <span>Explore Treatments</span>
               </button>
@@ -151,7 +160,7 @@ export default function Hero() {
                 />
                 
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/80 via-transparent to-black/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540]/85 via-transparent to-black/10" />
 
                 {/* Floating Overlay Badge: Ratings */}
                 <div className="absolute top-5 left-5 bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-lg border border-white/60 flex items-center gap-3">
@@ -169,9 +178,9 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Floating Overlay Badge: Doctors */}
+                {/* Floating Overlay Badge: Real Doctor Avatars */}
                 <div className="absolute bottom-5 inset-x-5 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/70">
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                       <span className="text-xs font-bold uppercase tracking-wider text-teal-800">
@@ -180,12 +189,37 @@ export default function Hero() {
                     </div>
                     <span className="text-[11px] font-semibold text-slate-500">Lalmatia, Dhaka</span>
                   </div>
-                  <div className="space-y-1 text-xs text-slate-700">
-                    <div className="font-semibold text-slate-900">
-                      • Dr. Pritam Sarker Ratul <span className="text-slate-500 font-normal">| BDS (DU), PGT (OMFS)</span>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2.5">
+                      <img
+                        src="/images/doctor-ratul.jpg"
+                        alt="Dr. Pritam Sarker Ratul"
+                        className="w-9 h-9 rounded-full object-cover border-2 border-teal-600 shrink-0"
+                      />
+                      <div className="leading-tight">
+                        <div className="font-bold text-slate-900 text-xs">
+                          Dr. Pritam Sarker Ratul
+                        </div>
+                        <div className="text-[10px] text-teal-700 font-medium">
+                          BDS (DU), PGT (OMFS) • Chief Consultant
+                        </div>
+                      </div>
                     </div>
-                    <div className="font-semibold text-slate-900">
-                      • Dr. Ornisha Urmi <span className="text-slate-500 font-normal">| BDS (DU), PGT (Conservative &amp; Endo)</span>
+
+                    <div className="flex items-center gap-2.5 pt-1 border-t border-slate-100">
+                      <img
+                        src="/images/doctor-urmi.jpg"
+                        alt="Dr. Ornisha Urmi"
+                        className="w-9 h-9 rounded-full object-cover border-2 border-teal-600 shrink-0"
+                      />
+                      <div className="leading-tight">
+                        <div className="font-bold text-slate-900 text-xs">
+                          Dr. Ornisha Urmi
+                        </div>
+                        <div className="text-[10px] text-teal-700 font-medium">
+                          BDS (DU), PGT • Orthodontics &amp; Aligners
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
