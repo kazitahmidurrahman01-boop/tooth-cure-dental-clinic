@@ -64,8 +64,8 @@ const ClinicIntro: React.FC = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200/90 aspect-[4/3] bg-slate-900 group">
               <img
-                src="/images/clinic-interior.jpg"
-                alt="Tooth Cure Dental Operatory and Equipment"
+                src="/images/gmap/gmap-3.jpg"
+                alt="Tooth Cure Dental Real Clinic Interior (Lalmatia Google Maps Photo)"
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />

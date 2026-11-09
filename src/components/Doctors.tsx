@@ -82,11 +82,16 @@ export default function Doctors() {
                       className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
-                    <div className="flex flex-col items-center justify-center p-6 text-center">
-                      <div className="w-20 h-20 rounded-full bg-teal-100/30 text-teal-300 flex items-center justify-center mb-2">
-                        <User size={40} />
+                    <div className="flex flex-col items-center justify-center p-8 text-center bg-gradient-to-br from-[#0A2540] via-teal-950 to-slate-900 w-full h-full">
+                      <div className="w-24 h-24 rounded-3xl bg-teal-800/30 border border-teal-500/30 text-teal-300 flex items-center justify-center mb-3 shadow-lg">
+                        <User size={44} className="text-teal-300/80" />
                       </div>
-                      <span className="text-xs font-semibold text-slate-300">Dental Surgeon</span>
+                      <span className="text-xs font-semibold tracking-wider uppercase text-teal-300/90">
+                        Associate Dental Surgeon
+                      </span>
+                      <span className="text-[11px] text-slate-400 mt-1">
+                        Tooth Cure Clinical Team
+                      </span>
                     </div>
                   )}
 

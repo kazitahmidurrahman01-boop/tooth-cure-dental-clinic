@@ -27,11 +27,15 @@ export const clinicInfo = {
     closed: 'Friday Morning',
   },
   googleMaps: {
-    searchQuery: 'Tooth Cure Dental Orthodontics & Implant Center 1/1E Block C Lalmatia Dhanmondi 27 Dhaka',
-    embedUrl: 'https://maps.google.com/maps?q=23.7555,90.37316+(Tooth+Cure+Dental+Orthodontics+%26+Implant+Center)&t=&z=17&ie=UTF8&iwloc=B&output=embed',
-    directLink: 'https://www.google.com/maps/search/?api=1&query=Tooth+Cure+Dental+Orthodontics+%26+Implant+Center+1%2F1E+Block+C+Lalmatia+Dhanmondi+Dhaka',
-    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=23.7555,90.37316&travelmode=driving',
-    directionsQueryUrl: 'https://www.google.com/maps/dir/?api=1&destination=Tooth+Cure+Dental+Orthodontics+%26+Implant+Center,+1/1E,+Block+C,+Lalmatia,+Dhaka',
+    placeId: 'ChIJQbVREqe_VTcR9pbJSXIihKM',
+    cid: '11782631526685710070',
+    coordinates: {
+      lat: 23.7556801,
+      lng: 90.3726754,
+    },
+    directListingUrl: 'https://www.google.com/maps/place/Tooth+Cure+Dental+Orthodontics+%26+Implant+center/@23.7556801,90.3726754,17z/data=!3m1!4b1!4m6!3m5!1s0x3755bfa71251b541:0xa384227249c996f6!8m2!3d23.7556801!4d90.3726754!16s%2Fg%2F11s55ksgrl',
+    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=23.7556801,90.3726754&destination_place_id=ChIJQbVREqe_VTcR9pbJSXIihKM&travelmode=driving',
+    embedUrl: 'https://maps.google.com/maps?q=23.7556801,90.3726754+(Tooth+Cure+Dental+Orthodontics+%26+Implant+Center)&t=&z=17&ie=UTF8&iwloc=B&output=embed',
   },
   stats: [
     { value: '15+', label: 'Years Combined Clinical Experience' },

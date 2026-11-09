@@ -2,6 +2,14 @@ import { motion } from 'framer-motion';
 import { MapPin, Phone, MessageCircle, Mail, Clock, ExternalLink, ShieldCheck, Navigation, Compass } from 'lucide-react';
 import { clinicInfo } from '../data/clinicInfo';
 
+const gmapPhotos = [
+  { src: '/images/gmap/gmap-1.jpg', label: 'রিসেপশন ও প্রবেশদ্বার' },
+  { src: '/images/gmap/gmap-2.jpg', label: 'কনসালটেশন চেম্বার' },
+  { src: '/images/gmap/gmap-3.jpg', label: 'ডেন্টাল চেয়ার ইউনিট' },
+  { src: '/images/gmap/gmap-4.jpg', label: 'অপারেটরি ইকুইপমেন্ট' },
+  { src: '/images/gmap/gmap-5.jpg', label: 'স্টেরিলাইজেশন জোন' },
+];
+
 export default function Contact() {
   return (
     <section id="contact" className="py-20 lg:py-28 bg-white relative">
@@ -16,7 +24,7 @@ export default function Contact() {
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-semibold uppercase tracking-wider mb-4"
           >
             <ShieldCheck className="w-3.5 h-3.5 text-teal-700" />
-            <span>Visit Us in Lalmatia / Dhanmondi</span>
+            <span>ভেরিফাইড গুগল ম্যাপ লোকেশন ও ডিরেকশন</span>
           </motion.div>
 
           <motion.h2
@@ -26,7 +34,7 @@ export default function Contact() {
             transition={{ delay: 0.1 }}
             className="font-headline font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight"
           >
-            Clinic Location &amp; <span className="text-teal-700">Live Directions</span>
+            ক্লিনিকের সঠিক ঠিকানা ও <span className="text-teal-700">লাইভ জিপিএস রুট</span>
           </motion.h2>
 
           <motion.p
@@ -36,7 +44,7 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="text-slate-600 max-w-xl mx-auto text-base sm:text-lg mt-3"
           >
-            Conveniently situated right behind Genetic Plaza in Dhanmondi 27 / Lalmatia Block C.
+            ধানমন্ডি ২৭ জেনেটিক প্লাজার ঠিক পেছনে লালমাটিয়া ব্লক সি-তে অবস্থিত। নিচের ডিরেকশন বাটনে চাপ দিলেই গুগল ম্যাপ সরাসরি চেম্বারে আসার টার্ন-বাই-টার্ন পথ দেখাবে।
           </motion.p>
         </div>
 
@@ -57,7 +65,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-headline font-bold text-slate-900 text-lg mb-1">
-                    Clinic Address
+                    চেম্বারের অফিসিয়াল ঠিকানা
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     <strong>Tooth Cure Dental Orthodontics &amp; Implant Center</strong><br />
@@ -67,7 +75,7 @@ export default function Contact() {
                   </p>
                   <div className="mt-2 text-xs text-teal-800 font-semibold flex items-center gap-1">
                     <Navigation size={13} />
-                    <span>Landmark: Behind Genetic Plaza, Dhanmondi 27</span>
+                    <span>ল্যান্ডমার্ক: জেনেটিক প্লাজার ঠিক পেছনের গলি, লালমাটিয়া সি ব্লক</span>
                   </div>
                 </div>
               </div>
@@ -75,21 +83,21 @@ export default function Contact() {
               {/* Turn-by-Turn Navigation CTAs */}
               <div className="pt-2 border-t border-slate-200/70 flex flex-col sm:flex-row gap-2.5">
                 <a
-                  href={clinicInfo.googleMaps.directionsQueryUrl}
+                  href={clinicInfo.googleMaps.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs sm:text-sm font-semibold transition-all shadow-xs active:scale-98"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs sm:text-sm font-semibold transition-all shadow-sm active:scale-98"
                 >
-                  <Compass size={16} />
-                  <span>গুগল ম্যাপে ডিরেকশন চালু করুন</span>
+                  <Compass size={17} />
+                  <span>গুগল ম্যাপে লাইভ ডিরেকশন চালু করুন</span>
                 </a>
                 <a
-                  href={clinicInfo.googleMaps.directLink}
+                  href={clinicInfo.googleMaps.directListingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-3.5 py-3 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs sm:text-sm font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-1.5 px-3.5 py-3.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs sm:text-sm font-semibold transition-colors"
                 >
-                  <span>ক্লিনিক পিন</span>
+                  <span>ম্যাপ পেজ</span>
                   <ExternalLink size={13} />
                 </a>
               </div>
@@ -102,20 +110,20 @@ export default function Contact() {
               </div>
               <div className="flex-1">
                 <h3 className="font-headline font-bold text-slate-900 text-base mb-1">
-                  Telephone Hotlines
+                  টেলিফোন ও হটলাইন
                 </h3>
                 <div className="space-y-1 text-sm font-semibold text-slate-800">
                   <div>
                     <a href={`tel:${clinicInfo.phones.primaryRaw}`} className="hover:text-teal-700 transition-colors">
                       {clinicInfo.phones.primary}
                     </a>
-                    <span className="text-xs text-slate-400 font-normal ml-2">(Primary Hotline)</span>
+                    <span className="text-xs text-slate-400 font-normal ml-2">(প্রধান হটলাইন)</span>
                   </div>
                   <div>
                     <a href={`tel:${clinicInfo.phones.secondaryRaw}`} className="hover:text-teal-700 transition-colors">
                       {clinicInfo.phones.secondary}
                     </a>
-                    <span className="text-xs text-slate-400 font-normal ml-2">(Reception Desk)</span>
+                    <span className="text-xs text-slate-400 font-normal ml-2">(রিসেপশন ডেস্ক)</span>
                   </div>
                 </div>
               </div>
@@ -124,7 +132,7 @@ export default function Contact() {
             {/* WhatsApp & Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <a
-                href={`https://wa.me/${clinicInfo.whatsapp.number}?text=${encodeURIComponent("Hello Tooth Cure Dental Center, I need directions to the clinic.")}`}
+                href={`https://wa.me/${clinicInfo.whatsapp.number}?text=${encodeURIComponent("Hello Tooth Cure Dental Center, I would like to get directions to the clinic.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-slate-50/80 p-4 rounded-2xl border border-slate-200/80 shadow-2xs flex items-center gap-3 hover:border-teal-300 hover:bg-teal-50/30 transition-all"
@@ -146,7 +154,7 @@ export default function Contact() {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-slate-900">Email Inquiries</div>
+                  <div className="text-xs font-bold text-slate-900">ইমেইল যোগাযোগ</div>
                   <div className="text-[11px] text-slate-600 truncate max-w-[120px]">{clinicInfo.email}</div>
                 </div>
               </a>
@@ -159,16 +167,16 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-headline font-bold text-slate-900 text-base mb-1">
-                  Consultation Hours
+                  রোগী দেখার সময়সূচী
                 </h3>
                 <div className="space-y-1 text-xs sm:text-sm text-slate-700">
                   <div className="flex justify-between gap-4">
-                    <span className="font-medium">Saturday – Thursday:</span>
-                    <span className="font-semibold text-slate-900">4:30 PM – 9:30 PM</span>
+                    <span className="font-medium">শনিবার – বৃহস্পতিবার:</span>
+                    <span className="font-semibold text-slate-900">বিকাল ৪:৩০ – রাত ৯:৩০</span>
                   </div>
                   <div className="flex justify-between gap-4">
-                    <span className="font-medium">Friday:</span>
-                    <span className="font-semibold text-teal-800">By Appointment Only</span>
+                    <span className="font-medium">শুক্রবার:</span>
+                    <span className="font-semibold text-teal-800">পূর্ব অ্যাপয়েন্টমেন্ট সাপেক্ষে</span>
                   </div>
                 </div>
               </div>
@@ -176,7 +184,7 @@ export default function Contact() {
 
           </motion.div>
 
-          {/* Right Column — Google Maps Embed with Direct Route Launcher */}
+          {/* Right Column — Google Maps Embed & Authentic Photos Strip */}
           <motion.div
             initial={{ opacity: 0, x: 25 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -188,22 +196,22 @@ export default function Contact() {
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-teal-600 animate-pulse" />
                   <span className="text-xs font-bold text-slate-800">
-                    Tooth Cure Dental • Lalmatia / Dhanmondi 27
+                    Tooth Cure Dental • 1/1E Block C, Lalmatia
                   </span>
                 </div>
                 <a
-                  href={clinicInfo.googleMaps.directionsQueryUrl}
+                  href={clinicInfo.googleMaps.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-teal-50 hover:bg-teal-100 text-teal-800 text-xs font-bold transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-teal-700 hover:bg-teal-800 text-white text-xs font-bold transition-colors shadow-2xs"
                 >
-                  <Compass size={13} />
-                  <span>Start Turn-by-Turn Navigation</span>
+                  <Compass size={14} />
+                  <span>গুগল ম্যাপে ডিরেকশন চালু করুন</span>
                   <ExternalLink size={12} />
                 </a>
               </div>
 
-              {/* Responsive Map Embed with specific coordinates */}
+              {/* Exact Google Maps Embed with Pin Coordinates */}
               <div className="aspect-[4/3] sm:aspect-[16/10] w-full">
                 <iframe
                   title="Tooth Cure Dental Location Lalmatia Dhanmondi 27"
@@ -218,15 +226,50 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="p-4 bg-slate-50 text-xs text-slate-600 border-t border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                <span>📍 <strong>Landmark Tip:</strong> Behind Genetic Plaza, Dhanmondi 27. Easily accessible via Road 27 or Asad Gate.</span>
+              {/* Photos Strip from Google Maps */}
+              <div className="p-4 bg-white border-t border-slate-200/80">
+                <div className="flex items-center justify-between mb-2.5">
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                    গুগল ম্যাপ থেকে চেম্বারের আসল ছবি
+                  </span>
+                  <a
+                    href={clinicInfo.googleMaps.directListingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-teal-700 font-semibold hover:underline"
+                  >
+                    সব ছবি দেখুন (Google Maps) →
+                  </a>
+                </div>
+                <div className="grid grid-cols-5 gap-2">
+                  {gmapPhotos.map((p, idx) => (
+                    <a
+                      key={idx}
+                      href={clinicInfo.googleMaps.directListingUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative aspect-square rounded-xl overflow-hidden border border-slate-200 shadow-2xs hover:border-teal-400 transition-all block"
+                      title={p.label}
+                    >
+                      <img
+                        src={p.src}
+                        alt={p.label}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-3.5 bg-slate-50 text-xs text-slate-600 border-t border-slate-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                <span>📍 <strong>লোকেশন গাইড:</strong> ধানমন্ডি ২৭ প্রধান সড়ক থেকে জেনেটিক প্লাজার পাশের গলিতে ঢুকলে লালমাটিয়া সি ব্লকের শুরুতেই ক্লিনিক।</span>
                 <a
-                  href={clinicInfo.googleMaps.directionsQueryUrl}
+                  href={clinicInfo.googleMaps.directionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-teal-700 font-bold hover:underline shrink-0"
                 >
-                  গুগল ম্যাপ রুট দেখুন →
+                  টার্ন-বাই-টার্ন জিপিএস রুট →
                 </a>
               </div>
             </div>

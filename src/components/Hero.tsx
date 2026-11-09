@@ -126,7 +126,7 @@ export default function Hero() {
                 <ArrowRight className="w-4 h-4" />
               </button>
               <a
-                href={clinicInfo.googleMaps.directionsQueryUrl}
+                href={clinicInfo.googleMaps.directionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-body font-semibold text-teal-800 bg-teal-50 border border-teal-200 hover:bg-teal-100 hover:border-teal-300 active:scale-95 transition-all duration-200 text-sm"
@@ -154,8 +154,8 @@ export default function Hero() {
               {/* Main Visual Image Card */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 aspect-[4/5] sm:aspect-[4/4.5]">
                 <img
-                  src="/images/hero-orthodontic.webp"
-                  alt="Tooth Cure Dental Clinic Dhanmondi"
+                  src="/images/hero-chamber.jpg"
+                  alt="Tooth Cure Dental Clinic Dhanmondi 27 Chamber"
                   className="w-full h-full object-cover object-center"
                 />
                 

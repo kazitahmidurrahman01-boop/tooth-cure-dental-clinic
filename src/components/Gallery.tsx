@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ZoomIn, X, Camera } from 'lucide-react';
+import { ZoomIn, X, Camera, MapPin } from 'lucide-react';
 
-const CATEGORIES = ['All', 'Clinic Operatory', 'Clinical Results', 'Specialist Care'];
+const CATEGORIES = ['All', 'Clinic & Chamber', 'Specialists', 'Clinical Results'];
 
 interface GalleryItem {
   id: number;
@@ -10,50 +10,77 @@ interface GalleryItem {
   label: string;
   imageUrl: string;
   description: string;
+  isGmap?: boolean;
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 1,
-    category: 'Clinic Operatory',
-    label: 'Modern Operatory Suite in Lalmatia',
-    imageUrl: '/images/clinic-interior.jpg',
-    description: 'Fully equipped clinical operatory with ergonomic dental chair, LED shadowless examination lighting, and integrated digital sensors.',
+    category: 'Clinic & Chamber',
+    label: 'Tooth Cure Dental Reception & Chamber Front',
+    imageUrl: '/images/gmap/gmap-1.jpg',
+    description: 'Reception and patient entry at 1/1E Block C, Lalmatia (Behind Genetic Plaza).',
+    isGmap: true,
   },
   {
     id: 2,
-    category: 'Clinical Results',
-    label: 'Orthodontic Teeth Realignment Result',
-    imageUrl: '/images/cases/braces-after.webp',
-    description: 'Finished orthodontic treatment under Dr. Ornisha Urmi achieving ideal arch form, incisor alignment, and balanced occlusion.',
+    category: 'Clinic & Chamber',
+    label: 'Specialist Consultation & Operatory Suite',
+    imageUrl: '/images/gmap/gmap-2.jpg',
+    description: 'Consultation chamber where Dr. Pritam and Dr. Ornisha examine patients and plan implant & aligner workflows.',
+    isGmap: true,
   },
   {
     id: 3,
-    category: 'Specialist Care',
-    label: 'Smile Architecture Consultation',
-    imageUrl: '/images/hero-orthodontic.webp',
-    description: 'One-on-one diagnostic consultation, digital imaging assessment, and step-by-step treatment planning session.',
+    category: 'Clinic & Chamber',
+    label: 'Ergonomic Dental Chair & Treatment Suite',
+    imageUrl: '/images/gmap/gmap-3.jpg',
+    description: 'Fully equipped dental chair with shadowless LED lighting and rotary endodontic equipment.',
+    isGmap: true,
   },
   {
     id: 4,
-    category: 'Clinical Results',
-    label: 'Laser In-Office Smile Whitening',
-    imageUrl: '/images/cases/whitening-after.webp',
-    description: 'Brightened enamel shade achieved following safe, chairside dental bleaching in Lalmatia.',
+    category: 'Clinic & Chamber',
+    label: 'High-Tech Dental Operatory Apparatus',
+    imageUrl: '/images/gmap/gmap-4.jpg',
+    description: 'Intraoral diagnostic apparatus, apex locators, and sterile instrument setups.',
+    isGmap: true,
   },
   {
     id: 5,
-    category: 'Specialist Care',
-    label: 'Consultant-Led Dental Surgery',
-    imageUrl: '/images/clinic-interior.jpg',
-    description: 'Guided dental implantology and surgical wisdom tooth removal directed by Dr. Pritam Sarker Ratul.',
+    category: 'Clinic & Chamber',
+    label: 'Hygienic Clinical Environment',
+    imageUrl: '/images/gmap/gmap-5.jpg',
+    description: 'Infection-free clinical floor maintaining strict Class-B autoclave sterilization standards.',
+    isGmap: true,
   },
   {
     id: 6,
-    category: 'Clinic Operatory',
-    label: 'Infection Control & Sterilization Suite',
-    imageUrl: '/images/clinic-interior.jpg',
-    description: 'Sterile instruments sealed in medical grade pouches following Class-B vacuum autoclave processing.',
+    category: 'Specialists',
+    label: 'Dr. Pritam Sarker Ratul',
+    imageUrl: '/images/doctor-ratul.jpg',
+    description: 'Chief Consultant & Oral Surgeon (BDS DU, PGT OMFS) leading dental implantology, surgical extractions, and full-mouth rehabilitations.',
+  },
+  {
+    id: 7,
+    category: 'Specialists',
+    label: 'Dr. Ornisha Urmi',
+    imageUrl: '/images/doctor-urmi.jpg',
+    description: 'Consultant Orthodontics & Aesthetic Dentistry (BDS DU, PGT OMFS, BMDC Reg. #15034) directing invisible clear aligners and smile makeovers.',
+  },
+  {
+    id: 8,
+    category: 'Clinical Results',
+    label: 'Orthodontic Realignment Result',
+    imageUrl: '/images/cases/braces-after.webp',
+    description: 'Completed fixed orthodontic case achieving balanced arch form, corrected bite, and harmonized smile flow.',
+  },
+  {
+    id: 9,
+    category: 'Clinical Results',
+    label: 'Laser In-Office Smile Whitening',
+    imageUrl: '/images/cases/whitening-after.webp',
+    description: 'Safe chairside aesthetic bleaching lifting intrinsic and extrinsic stains by multiple natural enamel shades.',
   },
 ];
 
@@ -78,7 +105,7 @@ export default function Gallery() {
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-200 text-teal-800 text-xs font-semibold uppercase tracking-wider mb-4"
           >
             <Camera className="w-3.5 h-3.5 text-teal-700" />
-            <span>Visual Evidence &amp; Operatory</span>
+            <span>ক্লিনিক ও ট্রিটমেন্ট গ্যালারি</span>
           </motion.div>
 
           <motion.h2
@@ -88,7 +115,7 @@ export default function Gallery() {
             transition={{ delay: 0.1 }}
             className="font-headline font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight"
           >
-            Clinic Atmosphere &amp; <span className="text-teal-700">Patient Results</span>
+            Tooth Cure Dental <span className="text-teal-700">Chamber &amp; Clinical Showcase</span>
           </motion.h2>
 
           <motion.p
@@ -98,7 +125,7 @@ export default function Gallery() {
             transition={{ delay: 0.2 }}
             className="text-slate-600 max-w-2xl mx-auto text-base sm:text-lg mt-3"
           >
-            Take a look inside our modern Dhanmondi/Lalmatia practice, our sterilization protocols, and completed smile transformations.
+            আমাদের লালমাটিয়া চেম্বারের আসল পরিবেশ, আধুনিক চিকিৎসা সরঞ্জাম এবং বিশেষজ্ঞ ডাক্তারদের প্রোফাইল।
           </motion.p>
         </div>
 
@@ -108,7 +135,7 @@ export default function Gallery() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                 activeCategory === cat
                   ? 'bg-teal-700 text-white shadow-xs'
                   : 'bg-white text-slate-600 border border-slate-200 hover:border-teal-300'
@@ -127,7 +154,7 @@ export default function Gallery() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.08 }}
+              transition={{ delay: idx * 0.06 }}
               onClick={() => setSelectedItem(item)}
               className="group cursor-pointer rounded-3xl overflow-hidden bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col"
             >
@@ -137,11 +164,13 @@ export default function Gallery() {
                   alt={item.label}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/10 transition-colors" />
+                <div className="absolute inset-0 bg-slate-900/25 group-hover:bg-slate-900/10 transition-colors" />
                 
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-full bg-slate-900/70 backdrop-blur-md text-white text-[11px] font-semibold">
-                    {item.category}
+                {/* Category Pill */}
+                <div className="absolute top-4 left-4 flex items-center gap-1.5">
+                  <span className="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-semibold flex items-center gap-1">
+                    {item.isGmap && <MapPin size={11} className="text-teal-400" />}
+                    <span>{item.category}</span>
                   </span>
                 </div>
 
@@ -155,7 +184,7 @@ export default function Gallery() {
                   <h3 className="font-headline font-bold text-slate-900 text-base mb-1 group-hover:text-teal-700 transition-colors">
                     {item.label}
                   </h3>
-                  <p className="text-slate-600 text-xs sm:text-sm line-clamp-2">
+                  <p className="text-slate-600 text-xs sm:text-sm line-clamp-2 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -168,7 +197,7 @@ export default function Gallery() {
         <AnimatePresence>
           {selectedItem && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm"
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-sm"
               onClick={() => setSelectedItem(null)}
             >
               <motion.div
@@ -176,7 +205,7 @@ export default function Gallery() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 onClick={(e) => e.stopPropagation()}
-                className="relative bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl"
+                className="relative bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl"
               >
                 <button
                   onClick={() => setSelectedItem(null)}

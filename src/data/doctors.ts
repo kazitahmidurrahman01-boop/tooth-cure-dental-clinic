@@ -76,7 +76,7 @@ export const doctors: Doctor[] = [
     bmdc: 'BMDC Registered',
     bio: 'Specialist in periodontal gum health, advanced rotary endodontics, and restorative oral therapies ensuring painless treatments and long-term tooth preservation.',
     photoPlaceholder: true,
-    photoUrl: '/images/clinic-interior.jpg',
+    photoUrl: undefined,
     specialties: [
       'Ultrasonic Deep Scaling & Root Planing',
       'Rotary Root Canal Therapies',
