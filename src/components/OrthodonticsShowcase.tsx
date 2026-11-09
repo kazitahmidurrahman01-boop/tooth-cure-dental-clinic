@@ -112,7 +112,7 @@ const OrthodonticsShowcase: React.FC = () => {
         </div>
 
         {/* Main Grid: Interactive Slider + Case Highlights */}
-        <div id="cases" className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div id="cases-comparison" className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Column: Interactive Before/After Comparison */}
           <div className="lg:col-span-7">
