@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, Phone, MessageCircle, Mail, Clock, ExternalLink, ShieldCheck, Navigation, Compass } from 'lucide-react';
 import { clinicInfo } from '../data/clinicInfo';
-import { getAssetUrl } from '../utils/assets';
+import { getAssetUrl, handleImageError } from '../utils/assets';
 
 const gmapPhotos = [
   { src: getAssetUrl('images/gmap/gmap-1.jpg'), label: 'রিসেপশন ও প্রবেশদ্বার' },
@@ -255,6 +255,7 @@ export default function Contact() {
                       <img
                         src={p.src}
                         alt={p.label}
+                        onError={handleImageError}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
                     </a>

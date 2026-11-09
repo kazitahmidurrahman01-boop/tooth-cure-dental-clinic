@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Calendar, Phone, ArrowRight, MapPin, Clock, ShieldCheck, Sparkles, Star, CheckCircle } from 'lucide-react';
 import { clinicInfo } from '../data/clinicInfo';
-import { getAssetUrl } from '../utils/assets';
+import { getAssetUrl, handleImageError } from '../utils/assets';
 
 export default function Hero() {
   const scrollToBooking = () => {
@@ -157,6 +157,7 @@ export default function Hero() {
                 <img
                   src={getAssetUrl('images/hero-chamber.jpg')}
                   alt="Tooth Cure Dental Clinic Dhanmondi 27 Chamber"
+                  onError={handleImageError}
                   className="w-full h-full object-cover object-center"
                 />
                 
@@ -195,6 +196,7 @@ export default function Hero() {
                       <img
                         src={getAssetUrl('images/doctor-ratul.jpg')}
                         alt="Dr. Pritam Sarker Ratul"
+                        onError={handleImageError}
                         className="w-9 h-9 rounded-full object-cover border-2 border-teal-600 shrink-0"
                       />
                       <div className="leading-tight">
@@ -211,6 +213,7 @@ export default function Hero() {
                       <img
                         src={getAssetUrl('images/doctor-urmi.jpg')}
                         alt="Dr. Ornisha Urmi"
+                        onError={handleImageError}
                         className="w-9 h-9 rounded-full object-cover border-2 border-teal-600 shrink-0"
                       />
                       <div className="leading-tight">

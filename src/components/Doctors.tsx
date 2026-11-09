@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { doctors } from '../data/doctors';
+import { handleImageError } from '../utils/assets';
 import { User, Calendar, ShieldCheck, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function Doctors() {
@@ -79,6 +80,7 @@ export default function Doctors() {
                     <img
                       src={doctor.photoUrl}
                       alt={doctor.name}
+                      onError={handleImageError}
                       className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                     />
                   ) : (

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ZoomIn, X, Camera, MapPin } from 'lucide-react';
-import { getAssetUrl } from '../utils/assets';
+import { getAssetUrl, handleImageError } from '../utils/assets';
 
 const CATEGORIES = ['All', 'Clinic & Chamber', 'Specialists', 'Clinical Results'];
 
@@ -163,6 +163,7 @@ export default function Gallery() {
                 <img
                   src={item.imageUrl}
                   alt={item.label}
+                  onError={handleImageError}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-slate-900/25 group-hover:bg-slate-900/10 transition-colors" />
@@ -219,6 +220,7 @@ export default function Gallery() {
                   <img
                     src={selectedItem.imageUrl}
                     alt={selectedItem.label}
+                    onError={handleImageError}
                     className="w-full h-full object-cover"
                   />
                 </div>

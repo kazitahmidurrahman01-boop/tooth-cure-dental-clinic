@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
+import { handleImageError } from '../utils/assets';
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -85,6 +86,7 @@ export default function BeforeAfterSlider({
       <img
         src={afterImage}
         alt={afterLabel}
+        onError={handleImageError}
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         loading="lazy"
       />
@@ -99,6 +101,7 @@ export default function BeforeAfterSlider({
         <img
           src={beforeImage}
           alt={beforeLabel}
+          onError={handleImageError}
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           loading="lazy"
         />

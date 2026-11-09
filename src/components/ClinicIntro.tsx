@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 import { clinicInfo } from '../data/clinicInfo';
-import { getAssetUrl } from '../utils/assets';
+import { getAssetUrl, handleImageError } from '../utils/assets';
 
 const ClinicIntro: React.FC = () => {
   const scrollToServices = () => {
@@ -67,6 +67,7 @@ const ClinicIntro: React.FC = () => {
               <img
                 src={getAssetUrl('images/gmap/gmap-3.jpg')}
                 alt="Tooth Cure Dental Real Clinic Interior (Lalmatia Google Maps Photo)"
+                onError={handleImageError}
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
