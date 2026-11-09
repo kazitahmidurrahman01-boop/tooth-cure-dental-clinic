@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { RotateCw, Scan, Eye, Layers, ShieldCheck, Activity } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 const TOTAL_FRAMES = 50;
 const FRAME_PATHS = Array.from({ length: TOTAL_FRAMES }, (_, i) => {
   const pad = String(i).padStart(2, '0');
-  return `/tooth-3d/frame-${pad}.webp`;
+  return getAssetUrl(`tooth-3d/frame-${pad}.webp`);
 });
 
 export default function Tooth3DViewer() {

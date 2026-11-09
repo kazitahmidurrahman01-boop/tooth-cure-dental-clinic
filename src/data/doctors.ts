@@ -1,3 +1,5 @@
+import { getAssetUrl } from '../utils/assets';
+
 export interface Doctor {
   id: number;
   name: string;
@@ -28,7 +30,7 @@ export const doctors: Doctor[] = [
     bmdc: 'BMDC Registered (DU)',
     bio: 'Chief Consultant at Tooth Cure Dental. Ex-Honorary Medical Officer at Dhaka Medical College & Hospital. Renowned for 3D guided titanium implant surgery, surgical wisdom tooth removal, and comprehensive reconstructive dental therapies in Lalmatia, Dhanmondi.',
     photoPlaceholder: false,
-    photoUrl: '/images/doctor-ratul.jpg',
+    photoUrl: getAssetUrl('images/doctor-ratul.jpg'),
     specialties: [
       'Immediate & Delayed Dental Implants',
       'Surgical Wisdom Tooth Removal',
@@ -52,7 +54,7 @@ export const doctors: Doctor[] = [
     bmdc: 'BMDC Reg. #15034',
     bio: 'Senior Consultant specializing in modern clear aligner therapy, aesthetic ceramic brackets, and smile makeovers with over 5 years of dedicated clinical mastery. Trained at Dhaka Dental College & Hospital in rotary endodontics and minimally invasive cosmetic dentistry.',
     photoPlaceholder: false,
-    photoUrl: '/images/doctor-urmi.jpg',
+    photoUrl: getAssetUrl('images/doctor-urmi.jpg'),
     specialties: [
       'Invisible Clear Aligners',
       'Aesthetic Ceramic & Metal Braces',

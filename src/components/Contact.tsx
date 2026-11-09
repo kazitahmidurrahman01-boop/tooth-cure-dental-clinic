@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { MapPin, Phone, MessageCircle, Mail, Clock, ExternalLink, ShieldCheck, Navigation, Compass } from 'lucide-react';
 import { clinicInfo } from '../data/clinicInfo';
+import { getAssetUrl } from '../utils/assets';
 
 const gmapPhotos = [
-  { src: '/images/gmap/gmap-1.jpg', label: 'রিসেপশন ও প্রবেশদ্বার' },
-  { src: '/images/gmap/gmap-2.jpg', label: 'কনসালটেশন চেম্বার' },
-  { src: '/images/gmap/gmap-3.jpg', label: 'ডেন্টাল চেয়ার ইউনিট' },
-  { src: '/images/gmap/gmap-4.jpg', label: 'অপারেটরি ইকুইপমেন্ট' },
-  { src: '/images/gmap/gmap-5.jpg', label: 'স্টেরিলাইজেশন জোন' },
+  { src: getAssetUrl('images/gmap/gmap-1.jpg'), label: 'রিসেপশন ও প্রবেশদ্বার' },
+  { src: getAssetUrl('images/gmap/gmap-2.jpg'), label: 'কনসালটেশন চেম্বার' },
+  { src: getAssetUrl('images/gmap/gmap-3.jpg'), label: 'ডেন্টাল চেয়ার ইউনিট' },
+  { src: getAssetUrl('images/gmap/gmap-4.jpg'), label: 'অপারেটরি ইকুইপমেন্ট' },
+  { src: getAssetUrl('images/gmap/gmap-5.jpg'), label: 'স্টেরিলাইজেশন জোন' },
 ];
 
 export default function Contact() {

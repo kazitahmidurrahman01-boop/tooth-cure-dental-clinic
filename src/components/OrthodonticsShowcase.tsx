@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight, Sparkles, SlidersHorizontal } from 'lucide-react';
 import BeforeAfterSlider from './BeforeAfterSlider';
+import { getAssetUrl } from '../utils/assets';
 
 interface ClinicalCase {
   id: string;
@@ -20,8 +21,8 @@ const clinicalCases: ClinicalCase[] = [
     category: 'Ceramic & Clear Aligners',
     duration: '12 Months Treatment',
     description: 'Correction of maxillary anterior crowding, rotated canine, and asymmetric smile arc by Dr. Ornisha Urmi using discreet orthodontic systems.',
-    beforeImg: '/images/cases/braces-before.webp',
-    afterImg: '/images/cases/braces-after.webp',
+    beforeImg: getAssetUrl('images/cases/braces-before.webp'),
+    afterImg: getAssetUrl('images/cases/braces-after.webp'),
   },
   {
     id: 'whitening',
@@ -29,8 +30,8 @@ const clinicalCases: ClinicalCase[] = [
     category: 'Aesthetic Dentistry',
     duration: '45-Minute In-Clinic Session',
     description: 'Removal of severe tea and extrinsic stains with chairside cold-light bleaching, enhancing tooth luminosity by 5 natural shades.',
-    beforeImg: '/images/cases/whitening-before.webp',
-    afterImg: '/images/cases/whitening-after.webp',
+    beforeImg: getAssetUrl('images/cases/whitening-before.webp'),
+    afterImg: getAssetUrl('images/cases/whitening-after.webp'),
   },
 ];
 

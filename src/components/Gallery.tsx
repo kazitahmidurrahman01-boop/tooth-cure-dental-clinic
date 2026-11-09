@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ZoomIn, X, Camera, MapPin } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 const CATEGORIES = ['All', 'Clinic & Chamber', 'Specialists', 'Clinical Results'];
 
@@ -18,7 +19,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 1,
     category: 'Clinic & Chamber',
     label: 'Tooth Cure Dental Reception & Chamber Front',
-    imageUrl: '/images/gmap/gmap-1.jpg',
+    imageUrl: getAssetUrl('images/gmap/gmap-1.jpg'),
     description: 'Reception and patient entry at 1/1E Block C, Lalmatia (Behind Genetic Plaza).',
     isGmap: true,
   },
@@ -26,7 +27,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 2,
     category: 'Clinic & Chamber',
     label: 'Specialist Consultation & Operatory Suite',
-    imageUrl: '/images/gmap/gmap-2.jpg',
+    imageUrl: getAssetUrl('images/gmap/gmap-2.jpg'),
     description: 'Consultation chamber where Dr. Pritam and Dr. Ornisha examine patients and plan implant & aligner workflows.',
     isGmap: true,
   },
@@ -34,7 +35,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 3,
     category: 'Clinic & Chamber',
     label: 'Ergonomic Dental Chair & Treatment Suite',
-    imageUrl: '/images/gmap/gmap-3.jpg',
+    imageUrl: getAssetUrl('images/gmap/gmap-3.jpg'),
     description: 'Fully equipped dental chair with shadowless LED lighting and rotary endodontic equipment.',
     isGmap: true,
   },
@@ -42,7 +43,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 4,
     category: 'Clinic & Chamber',
     label: 'High-Tech Dental Operatory Apparatus',
-    imageUrl: '/images/gmap/gmap-4.jpg',
+    imageUrl: getAssetUrl('images/gmap/gmap-4.jpg'),
     description: 'Intraoral diagnostic apparatus, apex locators, and sterile instrument setups.',
     isGmap: true,
   },
@@ -50,7 +51,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 5,
     category: 'Clinic & Chamber',
     label: 'Hygienic Clinical Environment',
-    imageUrl: '/images/gmap/gmap-5.jpg',
+    imageUrl: getAssetUrl('images/gmap/gmap-5.jpg'),
     description: 'Infection-free clinical floor maintaining strict Class-B autoclave sterilization standards.',
     isGmap: true,
   },
@@ -58,28 +59,28 @@ const GALLERY_ITEMS: GalleryItem[] = [
     id: 6,
     category: 'Specialists',
     label: 'Dr. Pritam Sarker Ratul',
-    imageUrl: '/images/doctor-ratul.jpg',
+    imageUrl: getAssetUrl('images/doctor-ratul.jpg'),
     description: 'Chief Consultant & Oral Surgeon (BDS DU, PGT OMFS) leading dental implantology, surgical extractions, and full-mouth rehabilitations.',
   },
   {
     id: 7,
     category: 'Specialists',
     label: 'Dr. Ornisha Urmi',
-    imageUrl: '/images/doctor-urmi.jpg',
+    imageUrl: getAssetUrl('images/doctor-urmi.jpg'),
     description: 'Consultant Orthodontics & Aesthetic Dentistry (BDS DU, PGT OMFS, BMDC Reg. #15034) directing invisible clear aligners and smile makeovers.',
   },
   {
     id: 8,
     category: 'Clinical Results',
     label: 'Orthodontic Realignment Result',
-    imageUrl: '/images/cases/braces-after.webp',
+    imageUrl: getAssetUrl('images/cases/braces-after.webp'),
     description: 'Completed fixed orthodontic case achieving balanced arch form, corrected bite, and harmonized smile flow.',
   },
   {
     id: 9,
     category: 'Clinical Results',
     label: 'Laser In-Office Smile Whitening',
-    imageUrl: '/images/cases/whitening-after.webp',
+    imageUrl: getAssetUrl('images/cases/whitening-after.webp'),
     description: 'Safe chairside aesthetic bleaching lifting intrinsic and extrinsic stains by multiple natural enamel shades.',
   },
 ];
